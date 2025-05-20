@@ -1,0 +1,73 @@
+import java.util.*;
+public class Main
+{
+  public static void main (String[]  args)
+  {
+    while(true)
+    {
+    String[] symbol={"rock","paper","scissor"};
+    String systemmove=symbol[ new Random().nextInt(symbol.length)];
+    Scanner sc=new Scanner(System.in);
+    String playermove;
+     while(true)
+     {
+    System.out.println("Enter your move rock / paper / scissor :");
+    playermove=sc.nextLine();
+    if( playermove.equals("rock")|| playermove.equals("scissor")|| playermove.equals("paper"))
+    {
+      break;
+    }
+    else
+    {
+      System.out.println(playermove+"Not valid move");
+      System.out.println("Enter valid symbol ");
+    }
+  }
+    
+    System.out.println("System played :"+ systemmove);
+    if(playermove.equals(systemmove))
+    {
+      System.out.println("---/--- Tie ---/---");
+    }
+    else if(playermove.equals("rock"))
+    {  
+        if(systemmove.equals("scissor"))
+        {
+          System.out.println("---/--- Player WoN ---/---");
+        }
+        else if(systemmove.equals("paper"))
+        {
+          System.out.println("---/--- System WoN ---/---");
+        }
+      }
+    else if(playermove.equals("paper"))
+    {  
+        if(systemmove.equals("rock"))
+        {
+          System.out.println("---/--- Player WoN ---/---");
+        }
+        else if(systemmove.equals("scissor"))
+        {
+          System.out.println("---/--- System WoN ---/---");
+        }
+      }
+    else if(playermove.equals("scissor"))
+    {  
+        if(systemmove.equals("paper"))
+        {
+          System.out.println("---/--- Player WoN ---/---");
+        }
+        else if (systemmove.equals("rock"))
+        {
+          System.out.println("---/--- System WoN ---/---");
+        }
+      }
+      System.out.println("Do you want to play again (yes/no) ");
+      String playagain=sc.nextLine();
+      if(playagain.equals("no"));
+      {
+        break;
+      }
+    }
+    }
+  }
